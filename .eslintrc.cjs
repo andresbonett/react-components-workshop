@@ -1,31 +1,30 @@
 module.exports = {
-  parserOptions: {
-    project: "./tsconfig.json",
-  },
-  env: {
-    browser: true,
-    es2021: true,
-    node: true,
-  },
-  extends: ["standard-with-typescript", "plugin:react/recommended"],
-  overrides: [
-    {
-      env: {
-        node: true,
-      },
-      files: [".eslintrc.{js,cjs}"],
-      parserOptions: {
-        sourceType: "script",
-      },
-    },
+  root: true,
+  env: { browser: true, es2020: true },
+  extends: [
+    // 'eslint:recommended',
+    // 'plugin:@typescript-eslint/recommended',
+    // 'plugin:react-hooks/recommended',
+    'plugin:react/recommended',
+    'standard-with-typescript',
+    'prettier',
   ],
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-  },
-  plugins: ["react"],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['react-refresh', '@typescript-eslint', 'react', 'react-hooks'],
   rules: {
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "react/react-in-jsx-scope": "off",
+    'no-console': 'warn',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true },
+    ],
   },
-};
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+}

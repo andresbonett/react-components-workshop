@@ -12,8 +12,8 @@ export default function ButtonTest ({
   size
 }: ButtonTestProps) {
   return (
-    <button className={`btn btn-primary ${size && size}`} onClick={onClick}>
-      {children}
-    </button>
+            <button className={`btn btn-primary ${size}`} onClick={onClick}>
+              {children}
+            </button>
   )
 }
