@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <h1>React Components Workshop</h1>
+      <h1 className='ext-3xl font-bold underline'>React Components Workshop</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
